@@ -30,10 +30,10 @@
 <body>
   
    <!-- Ganti Audio di sini -->
-<audio src="https://raw.githubusercontent.com/Studentalthaf/gabut/main/au1.mp3" id="linkmp3" class="sembunyi"></audio>
+<audio src="https://raw.githubusercontent.com/Studentalthaf/gabut/main/hivi.mp3" id="linkmp3" class="sembunyi"></audio>
 
    <div id="bodyblur">
-     <!-- Wallpaper --><img src="https://raw.githubusercontent.com/Studentalthaf/gabut/main/a1.jpeg" id="wallpaper"/><div id="beneranblur"></div>
+     <!-- Wallpaper --><img src="a1.jpeg" id="wallpaper"/><div id="beneranblur"></div>
    </div>
    
    <div id='Content'>
@@ -70,15 +70,15 @@
 
        <p id="pesan2">Tunggu...</p>
        <!-- Pesan -->
-       <p id="pesan3">Cikkkkk...... ulthaf e tambah tuek e 🤣❤️</p>
-       <p id="pesan4">Happy Birthday, </p>
-       <p id="pesan5" class="gaya2">Nambah tua aja ya, hehe</p>
-       <p id="pesan6" class="gaya2">Moga panjang umur biar tiap tahun bisa traktirin aku wkwk 😆❤️</p>
-       <p id="pesan7" class="gaya2">Sehat selalu ya!</p>
+       <p id="pesan3">EAA BERTAMBAH USIA NIHHHHH 🤣❤️</p>
+       <p id="pesan4">Happy Birthday, sayang </p>
+       <p id="pesan5" class="gaya2">Bertambah umur nihh, hehe</p>
+       <p id="pesan6" class="gaya2">Moga panjang umur biar bisa sama aku terus yaaaa 😆❤️</p>
+       <p id="pesan7" class="gaya2">Sehat selalu!</p>
 
-       <p id="pesan8" class="gaya2">Canda wkwwk :v</p>
+       <p id="pesan8" class="gaya2">Makin cantik setiap hari wkwwk :v</p>
        <p id="pesan9" class="gaya2">Oh iya, semoga di hari spesialmu ini kamu dapat menjadi pribadi yang lebih baik yaa.. 🥳❤️</p>
-       <p id="pesan10" class="gaya2">Happy Level Up Day!! 🥳 <a href="https://raw.githubusercontent.com/Studentalthaf/gabut/main/p1.pdf" download="p1.pdf" class="btn-lanjut" style="margin-left: 20px;">Unduh PDF</a></p>
+      <p id="pesan10" class="gaya2">Pokoknya bahagia terus deh, sukses selalu, dan semua doa-doa baikmu dikabulkan sama Tuhan 😇🙏</p>
 
 
        <!-- Tombol Lanjut -->
@@ -107,13 +107,20 @@
   async function inipesan(){
     var { value: nama } = await swals.fire({
            title: 'Masukin Nama Kamu', input: 'text',
+            inputLabel: 'Btw sorry fotonya wkwk', inputPlaceholder: 'Siapa namamu?'
        });
        if(nama && nama.length < 11){
-         window.nama = nama;
-         vketikhalo="Hai, " + nama + " ✨";
-         mulainama();
+         // Validasi: hanya boleh "shafa" (case insensitive)
+         if(nama.toLowerCase() === 'shafa'){
+           window.nama = nama;
+           vketikhalo="Hai, " + nama + " ✨";
+           mulainama();
          } else {
-           await swals.fire('Ups!', 'Nama tidak boleh kosong atau lebih dari 10 karakter, ya!');inipesan();
+           await swals.fire('Ups!', 'Kamu bukan Shafa Sayangku!');
+           inipesan();
+         }
+         } else {
+           await swals.fire('Ups!', 'Ini khusus Shafa Sayangku, ya!');inipesan();
     }
   }
 
